@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b -v --pretty false && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@acme/core": "workspace:^",
+    "@acme/core": "workspace:*",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
