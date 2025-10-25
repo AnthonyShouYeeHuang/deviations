@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* Optional backdrop gradient & base tweaks (kept from earlier) */
+:root {
+  --bg-from: 255, 255, 255;      /* #fff */
+  --bg-to: 243, 244, 246;        /* #f3f4f6 */
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-from: 9, 9, 11;         /* #09090b */
+    --bg-to: 24, 24, 27;         /* #18181b */
+  }
+}
+html, body, #root { height: 100%; }
+body {
+  background: linear-gradient(180deg,
+    rgba(var(--bg-from),1) 0%,
+    rgba(var(--bg-to),1) 100%);
+}

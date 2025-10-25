@@ -1,0 +1,19 @@
+{
+  "name": "daily-game-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "esbuild src/index.ts --bundle --format=esm --outfile=dist/index.js",
+    "deploy": "wrangler publish"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.0",
+    "hono": "^4.6.11",
+    "luxon": "^3.7.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.11",
+    "wrangler": "^4.43.0"
+  }
+}

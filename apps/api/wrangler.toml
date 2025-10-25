@@ -1,0 +1,4 @@
+﻿name = "daily-game-api"
+main = "dist/index.js"
+compatibility_date = "2024-10-01"
+DATABASE_URL = "postgresql://neondb_owner:npg_gLKGIZmDVw29@ep-aged-credit-adcz7a5q-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
