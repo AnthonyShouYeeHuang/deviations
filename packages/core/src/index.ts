@@ -4,14 +4,11 @@ export * from "./win";
 
 /** A stable per-device key; stored in localStorage. */
 export function deviceKey(): string {
-  let k = localStorage.getItem("devkey");
-  if (!k) {
-    // crypto.randomUUID is supported on modern browsers
-    const uuid = (crypto as any).randomUUID?.() ?? `${Date.now()}-${Math.random()}`;
-    localStorage.setItem("devkey", uuid);
-    k = uuid;
-  }
-  return k;
+  const k = localStorage.getItem("devkey");
+  if (k) return k;
+  const v = crypto.randomUUID();
+  localStorage.setItem("devkey", v);
+  return v; // <-- return the new value, not k
 }
 
 /** Minimal validation for answers. Extend later per winType. */

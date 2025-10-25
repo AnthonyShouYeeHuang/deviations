@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { evaluate, type Answer, validateAnswer } from "@acme/core";
 import { getToday, getResults } from "../lib/api";
 

@@ -5,7 +5,7 @@ export const PROBLEMS: Problem[] = [
     id: "sample-1",
     category: "The Greed Line",
     prompt: "Pick any dollar amount — from $0 to as high as you want.\nYou only win if you’re below the average—\nbut not too far below.\nFind the sweet spot and cash in.",
-    winType: "within_std_below_mean",
+    winType: "within_sd_below_mean",
     config: {}
   },
   {
@@ -46,7 +46,7 @@ export const PROBLEMS: Problem[] = [
     id: "sample-6",
     category: "The Greed Line",
     prompt: "Pick any dollar amount — from $0 to as high as you want.\nYou only win if you’re above the average—\nbut not too far above.\nFind the sweet spot and cash in.",
-    winType: "within_std_above_mean",
+    winType: "within_sd_above_mean",
     config: {}
   },
 ];

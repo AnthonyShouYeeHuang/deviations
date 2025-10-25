@@ -19,7 +19,7 @@ export default function App() {
 
   // server data
   const [todayId, setTodayId] = useState<string>("");
-  const [timeRemainingMs, setTimeRemainingMs] = useState<number>(0);
+  const [, setTimeRemainingMs] = useState<number>(0);
   const [problem, setProblem] = useState<Problem | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [err, setErr] = useState<string>("");

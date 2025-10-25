@@ -40,7 +40,7 @@ export function evaluate(
         detail: { val, target: t, tol }
       };
     }
-    case "within_std_below_mean": {
+    case "within_sd_below_mean": {
       const mean = aggregates.average;          // reuse the existing field name
       const std = (aggregates as any).stddev as number | undefined;
       const val = typeof yourAnswer === "number" ? yourAnswer : Number.NaN;
@@ -56,7 +56,7 @@ export function evaluate(
       return { won: ok, detail: { val, mean, std, lowerBound: (typeof mean === "number" && typeof std === "number") ? mean - std : undefined }
       };
     }
-    case "within_std_above_mean": {
+    case "within_sd_above_mean": {
       const mean = aggregates.average;          // reuse the existing field name
       const std = (aggregates as any).stddev as number | undefined;
       const val = typeof yourAnswer === "number" ? yourAnswer : Number.NaN;
