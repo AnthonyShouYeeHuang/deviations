@@ -96,7 +96,7 @@ importers:
   apps/web:
     dependencies:
       '@acme/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/core
       react:
         specifier: ^19.1.1
