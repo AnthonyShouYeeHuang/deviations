@@ -1,13 +1,13 @@
 ﻿{
-  "extends": "../../packages/typescript-config/base.json",
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "target": "ES2022",
-    "isolatedModules": true,
-    "declaration": true,
     "composite": true,
-    "outDir": "dist"
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true,
+    "strict": true
   },
   "include": ["src"]
 }
