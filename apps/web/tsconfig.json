@@ -1,11 +1,8 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "moduleResolution": "Bundler",
-    "paths": {
-      "@acme/core": ["../../packages/core/src"]
-    },
-    "types": ["vite/client"]
-  },
-  "references": [{ "path": "../../packages/core" }]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" },
+    { "path": "../../packages/core" }
+  ]
 }
