@@ -7,12 +7,8 @@ export default defineConfig({
   plugins: [react(), tailwind()],
   resolve: {
     alias: {
-      '@acme/core': path.resolve(__dirname, '../../packages/core/src'),
+      '@acme/core': path.resolve(__dirname, '../../packages/core/dist'),
     },
   },
-  server: {
-    proxy: {
-      '/api': 'http://127.0.0.1:8787', // Wrangler dev default
-    },
-  },
+  server: { proxy: { '/api': 'http://127.0.0.1:8787' } },
 })

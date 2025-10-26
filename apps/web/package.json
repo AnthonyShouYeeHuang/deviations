@@ -28,5 +28,8 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7"
+  },
+  "scripts": {
+    "build": "tsc --showConfig -p tsconfig.json && tsc -b --traceResolution --pretty false && vite build"
   }
 }
