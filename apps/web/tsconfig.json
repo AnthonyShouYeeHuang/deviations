@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@acme/core": ["../../packages/core/src"]
+      "@acme/core": ["../../packages/core/dist"]
     },
     "outDir": "dist"
   },
