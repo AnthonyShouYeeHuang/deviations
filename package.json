@@ -24,7 +24,7 @@
   "dependencies": {
     "@acme/core": "workspace:^",
     "luxon": "^3.7.2"
-  }.
+  },
   "scripts": {
     "build": "pnpm -r --filter @acme/core... build && pnpm --filter web build"
   }
