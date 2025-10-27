@@ -1,17 +1,29 @@
 {
   "name": "@acme/core",
   "version": "0.1.0",
+  "private": false,
   "type": "module",
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
   },
-  "files": ["dist", "src"],
+  "files": ["dist"],
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "pnpm exec tsc -p tsconfig.build.json",
+    "clean": "rimraf dist || rmdir /s /q dist"
+  },
+  "dependencies": {
+    "luxon": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.7.1",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.3"
   }
 }

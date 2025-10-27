@@ -1,4 +1,4 @@
-﻿import type { Problem, Answer } from "./types";
+﻿import type { Problem, Answer } from "./types.js";
 
 export type Aggregates = {
   // below_average / closest_to_target
