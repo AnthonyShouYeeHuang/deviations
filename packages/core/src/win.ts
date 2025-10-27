@@ -118,5 +118,50 @@ export function evaluate(
     default:
       return { won: false };
   }
-}
+};
 
+export function validateAnswer(
+  problemOrAnswer: any,
+  maybeAnswer?: any
+): boolean {
+  // normalize to { problem, answer }
+  let problem = undefined as any;
+  let answer = undefined as any;
+
+  if (arguments.length === 1) {
+    // Caller passed a single value or an object { problem, answer }
+    const arg = problemOrAnswer;
+    if (arg && typeof arg === "object" && ("answer" in arg || "problem" in arg)) {
+      problem = arg.problem;
+      answer = arg.answer;
+    } else {
+      answer = arg;
+    }
+  } else {
+    problem = problemOrAnswer;
+    answer = maybeAnswer;
+  }
+
+  // If problem provides its own validator, use it
+  if (problem && typeof problem.validate === "function") {
+    try {
+      return !!problem.validate(answer);
+    } catch {
+      // fall through to generic checks
+    }
+  }
+
+  // Numeric problem with a target
+  if (problem?.type === "number" && problem?.target != null) {
+    const a = typeof answer === "number" ? answer : Number(answer);
+    const b = typeof problem.target === "number" ? problem.target : Number(problem.target);
+    if (Number.isFinite(a) && Number.isFinite(b)) {
+      return Math.abs(a - b) < 1e-9;
+    }
+  }
+
+  // Generic fallback: “is there a non-empty answer?”
+  if (answer == null) return false;
+  if (typeof answer === "string") return answer.trim().length > 0;
+  return true;
+}

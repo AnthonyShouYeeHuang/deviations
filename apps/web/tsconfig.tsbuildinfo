@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/problems.ts","./src/usedevday.ts","./src/vite-env.d.ts","./src/components/numberstepper.tsx","./src/components/resultsmodal.tsx","./src/hooks/useyesterdayresults.ts","./src/lib/api.ts"],"version":"5.9.3"}

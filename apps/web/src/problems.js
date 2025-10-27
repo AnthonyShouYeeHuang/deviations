@@ -1,8 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.PROBLEMS = void 0;
-exports.pickTodayProblem = pickTodayProblem;
-exports.PROBLEMS = [
+export const PROBLEMS = [
     {
         id: "sample-1",
         category: "The Greed Line",
@@ -33,14 +29,14 @@ exports.PROBLEMS = [
     {
         id: "sample-4",
         category: "The Fine Line",
-        prompt: "Pick a number (0\u20131000).\nYou only win if your answer is close to 80% of today's average.",
+        prompt: `Pick a number (0–1000).\nYou only win if your answer is close to 80% of today's average.`,
         winType: "closest_to_pct_of_mean",
         config: { min: 0, max: 1000, pctOfMean: 0.8, sigmaWindow: 0.5 }
     },
     {
         id: "sample-5",
         category: "The Fine Line",
-        prompt: "Pick a number (0\u2013100).\nYou only win if your answer is close to 120% of today's average.",
+        prompt: `Pick a number (0–100).\nYou only win if your answer is close to 120% of today's average.`,
         winType: "closest_to_pct_of_mean",
         config: { min: 0, max: 1000, pctOfMean: 1.2, sigmaWindow: 0.5 }
     },
@@ -53,13 +49,13 @@ exports.PROBLEMS = [
     },
 ];
 // pick an item “by date” deterministically (placeholder)
-function pickTodayProblem(todayId) {
-    var idx = Math.abs(Math.imul(hash(todayId), 2654435761)) % exports.PROBLEMS.length;
-    return exports.PROBLEMS[idx];
+export function pickTodayProblem(todayId) {
+    const idx = Math.abs(Math.imul(hash(todayId), 2654435761)) % PROBLEMS.length;
+    return PROBLEMS[idx];
 }
 function hash(s) {
-    var h = 0;
-    for (var i = 0; i < s.length; i++)
+    let h = 0;
+    for (let i = 0; i < s.length; i++)
         h = (h * 31 + s.charCodeAt(i)) | 0;
     return h | 0;
 }

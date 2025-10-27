@@ -1,9 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = require("react");
-var client_1 = require("react-dom/client");
-require("./index.css");
-var App_1 = require("./App");
-(0, client_1.createRoot)(document.getElementById('root')).render(<react_1.StrictMode>
-    <App_1.default />
-  </react_1.StrictMode>);
+import { jsx as _jsx } from "react/jsx-runtime";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App';
+createRoot(document.getElementById('root')).render(_jsx(StrictMode, { children: _jsx(App, {}) }));
